@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from "react"
 import './App.css';
 
+import api from "./services/api"
+import CharacterCard from './components/Charactercard'
+import Header from './components/Header'
+
 function App() {
+  const [char, setChar] = useState([])
+
+  useEffect( () => {
+    api
+      .get("character/")
+      .then((response) => 
+      setChar(response.data.results))
+    }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />      
+      <div className="App">
+        {char.map((chars, id) => {
+          return <CharacterCard key={id} chars={chars} />
+        })}
+        {console.log(char)}
+
+      </div>
     </div>
   );
 }

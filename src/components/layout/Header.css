@@ -1,0 +1,22 @@
+.Header {
+    background-color: black;
+    padding: 5px;
+    display: flex;
+    align-content: space-between;
+    height: 30px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
+.Header h2 {
+    color: white;
+    margin-right: 30px;
+    margin-left: 20px;
+    align-self: center;
+}
+
+.Header div {
+    margin-left: 10px;
+    align-content: center;
+}

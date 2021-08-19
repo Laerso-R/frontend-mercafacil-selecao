@@ -1,0 +1,20 @@
+.Card {
+    flex: 1;
+    margin: 45px 10px 0px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    display: flex;
+    max-width: 900px;
+}
+
+.Card h2  {
+    margin-left: 10px;
+    flex-direction: column;
+    align-self: center;
+}
+
+.Card p {
+    margin-left: 20px;
+}
